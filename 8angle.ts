@@ -61,6 +61,14 @@ namespace angle8 {
         return getReg16(ch);
     }
     /**
+     * inputSW
+     */
+    //% blockId="inputSW" block="inputSW"
+    //% weight=90 blockGap=8
+    export function inputSW(): number {
+        return getReg8(0x20);
+    }
+    /**
      * setRGB
      */
     //% blockId="setRGB" block="setRGB led:%led red:%r green:%g blue:%b bright:%br"
