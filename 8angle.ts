@@ -81,4 +81,24 @@ namespace angle8 {
         setReg32(0x30 + led * 4,dat);
         return;
     }
+    /**
+     * setRGB
+     */
+    //% blockId="setColor" block="setColor led:%led color:%c bright:%br"
+    export function setColor(led: number, c: number, br: number): void {
+        let dat = [0, 0, 0, 0];
+        dat[0] = c >> 16;
+        dat[1] = c >> 8 & 0xff;
+        dat[2] = c & 0xff;
+        dat[3] = br;
+        setReg32(0x30 + led * 4, dat);
+        return;
+    }
+    /**
+     * setRGB
+     */
+    //% blockId="getColor" block="getColor red:%r green:%g blue:%b"
+    export function getColor(r: number, g: number, b: number): number {
+        return (r * 256 + g) * 256 + b;
+    }
 }
