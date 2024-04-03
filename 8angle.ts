@@ -5,9 +5,6 @@
 namespace angle8 {
     let I2C_ADDR = 0x43
 
-    /**
-     * set reg
-     */
     function setReg8(reg: number, dat: number): void {
         let buf = pins.createBuffer(2);
         buf[0] = reg;
@@ -30,9 +27,6 @@ namespace angle8 {
         buf[4] = dat[3];
         pins.i2cWriteBuffer(I2C_ADDR, buf);
     }
-    /**
-     * get reg
-     */
     function getReg8(reg: number): number {
         pins.i2cWriteNumber(I2C_ADDR, reg, NumberFormat.UInt8BE);
         return pins.i2cReadNumber(I2C_ADDR, NumberFormat.UInt8BE);
@@ -42,35 +36,18 @@ namespace angle8 {
         return pins.i2cReadNumber(I2C_ADDR, NumberFormat.UInt16LE);
     }
 
-    /**
-     * input8
-     * @param ch number,eg:0
-     */
     //% blockId="input8" block="input8 ch:%ch"
-    //% weight=90 blockGap=8
     export function input8(ch: number): number {
         return getReg8(0x10 + ch);
     }
-    /**
-     * input12
-     * @param ch number,eg:0
-     */
     //% blockId="input12" block="input12 ch:%ch"
-    //% weight=90 blockGap=8
     export function input12(ch: number): number {
         return getReg16(ch * 2);
     }
-    /**
-     * inputSW
-     */
     //% blockId="inputSW" block="inputSW"
-    //% weight=90 blockGap=8
     export function inputSW(): number {
         return getReg8(0x20);
     }
-    /**
-     * setRGB
-     */
     //% blockId="setRGB" block="setRGB led:%led red:%r green:%g blue:%b bright:%br"
     export function setRGB(led: number, r: number, g:number, b: number, br:number): void {
         let dat = [0,0,0,0];
@@ -81,9 +58,6 @@ namespace angle8 {
         setReg32(0x30 + led * 4,dat);
         return;
     }
-    /**
-     * setRGB
-     */
     //% blockId="setColor" block="setColor led:%led color:%c bright:%br"
     export function setColor(led: number, c: number, br: number): void {
         let dat = [0, 0, 0, 0];
@@ -94,9 +68,6 @@ namespace angle8 {
         setReg32(0x30 + led * 4, dat);
         return;
     }
-    /**
-     * setRGB
-     */
     //% blockId="getColor" block="getColor red:%r green:%g blue:%b"
     export function getColor(r: number, g: number, b: number): number {
         return (r * 256 + g) * 256 + b;
