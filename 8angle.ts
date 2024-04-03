@@ -1,7 +1,7 @@
 /**
  * 8angle potentio meter
  */
-//% weight=10 color=#800080 icon="\u261d" block="apds9960"
+//% weight=10 color=#800080 icon="\u261d" block="8angle"
 namespace angle8 {
     let I2C_ADDR = 0x43
 
@@ -46,7 +46,7 @@ namespace angle8 {
      * input8
      * @param ch number,eg:0
      */
-    //% blockId="input8" block="input8 %ch"
+    //% blockId="input8" block="input8 ch:%ch"
     //% weight=90 blockGap=8
     export function input8(ch: number): number {
         return getReg8(0x10 + ch);
@@ -55,7 +55,7 @@ namespace angle8 {
      * input12
      * @param ch number,eg:0
      */
-    //% blockId="input12" block="input12 %ch"
+    //% blockId="input12" block="input12 ch:%ch"
     //% weight=90 blockGap=8
     export function input12(ch: number): number {
         return getReg16(ch);
@@ -63,7 +63,7 @@ namespace angle8 {
     /**
      * setRGB
      */
-    //% blockId="setRGB" block="setRGB"
+    //% blockId="setRGB" block="setRGB led:%led red:%r green:%g blue:%b bright:%br"
     export function setRGB(led: number, r: number, g:number, b: number, br:number): void {
         let dat = [0,0,0,0];
         dat[0] = r;
