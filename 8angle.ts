@@ -58,7 +58,7 @@ namespace angle8 {
     //% blockId="input12" block="input12 ch:%ch"
     //% weight=90 blockGap=8
     export function input12(ch: number): number {
-        return getReg16(ch);
+        return getReg16(ch * 2);
     }
     /**
      * inputSW
