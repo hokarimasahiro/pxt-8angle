@@ -1,0 +1,10 @@
+angle8.setRGB(0, 255, 0, 0, 32);
+angle8.setRGB(1, 255, 255, 0, 32);
+angle8.setRGB(2, 255, 0, 255, 32);
+angle8.setRGB(3, 0, 255, 0, 32);
+angle8.setRGB(4, 0, 255, 255, 32);
+angle8.setRGB(5, 0, 0, 255, 32);
+angle8.setRGB(6, 255, 255, 255, 32);
+angle8.setRGB(7, 255, 0, 0, 32);
+angle8.setRGB(8, 0, 255, 0, 32);
+angle8.setRGB(9, 0, 0, 255, 32);
