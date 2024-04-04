@@ -2,8 +2,7 @@
     "name": "pxt-8angle",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
