@@ -1,7 +1,7 @@
 /**
  * 8angle potentio meter
  */
-//% weight=10 color=#800080 icon="\u21f3" block="8angle"
+//% weight=10 color=#800080 icon="\uf337" block="8angle"
 namespace angle8 {
     let I2C_ADDR = 0x43
 
